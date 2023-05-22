@@ -1,12 +1,31 @@
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+:root {
+  --body-color: #f7f8fa;
+  --primary-color: #e17af6;
+  --hover-color: #acb4bf;
+  --container-color: #e6ebf2;
+  --text-alter-color: #0bd2d4;
+  --text-color: #fbfeff;
+  --gray-dark: #050110;
+  --gray-medium: #393c40;
+  --gray-text: hsl(240deg 8% 43%);
+  --gray-light: #9f9fa0;
+  --gray-menu: #e6ebf2;
+  --gray-image: #1c1d1f;
+  --gray-hover: #acb4bf;
+  --white-text: rgba(255, 255, 255, 0.7);
+  --white: #ffffff;
+  --br: 3px;
+  --bx: 2px 3px 3px rgba(195, 194, 194, 0.776);
 }
-
+body {
+  background-color: var(--body-color);
+}
+.container {
+  max-width: 1300px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
 .switch {
   font-size: 17px;
   position: relative;
@@ -14,13 +33,11 @@
   width: 64px;
   height: 34px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -28,12 +45,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #73C0FC;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: rgba(30, 30, 31, 0.774);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 30px;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -43,11 +59,10 @@
   left: 2px;
   bottom: 2px;
   z-index: 2;
-  background-color: #e8e8e8;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: var(--primary-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
-
 .sun svg {
   position: absolute;
   top: 6px;
@@ -56,9 +71,8 @@
   width: 24px;
   height: 24px;
 }
-
 .moon svg {
-  fill: #73C0FC;
+  fill: #73c0fc;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -66,100 +80,81 @@
   width: 24px;
   height: 24px;
 }
-
-/* .switch:hover */.sun svg {
+/* .switch:hover */
+.sun svg {
   -webkit-animation: rotate 15s linear infinite;
-          animation: rotate 15s linear infinite;
+  animation: rotate 15s linear infinite;
 }
-
 @-webkit-keyframes rotate {
- 
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
-
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
 @keyframes rotate {
- 
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
-
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
-/* .switch:hover */.moon svg {
+/* .switch:hover */
+.moon svg {
   -webkit-animation: tilt 5s linear infinite;
-          animation: tilt 5s linear infinite;
+  animation: tilt 5s linear infinite;
 }
-
 @-webkit-keyframes tilt {
- 
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
-
   25% {
     -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
-
   75% {
     -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
-
   100% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 @keyframes tilt {
- 
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
-
   25% {
     -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
-
   75% {
     -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
-
   100% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 .input:checked + .slider {
   background-color: #183153;
 }
-
 .input:focus + .slider {
   -webkit-box-shadow: 0 0 1px #183153;
-          box-shadow: 0 0 1px #183153;
+  box-shadow: 0 0 1px #183153;
 }
-
 .input:checked + .slider:before {
   -webkit-transform: translateX(30px);
-      -ms-transform: translateX(30px);
-          transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
 }
